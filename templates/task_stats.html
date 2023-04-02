@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Task Statistics</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Not Started</td>
+                <td>{{ not_started_count }}</td>
+            </tr>
+            <tr>
+                <td>In Progress</td>
+                <td>{{ in_progress_count }}</td>
+            </tr>
+            <tr>
+                <td>Completed</td>
+                <td>{{ completed_count }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Priority Level</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Low</td>
+                <td>{{ low_priority_count }}</td>
+            </tr>
+            <tr>
+                <td>Medium</td>
+                <td>{{ medium_priority_count }}</td>
+            </tr>
+            <tr>
+                <td>High</td>
+                <td>{{ high_priority_count }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back</a>
+{% endblock %}
